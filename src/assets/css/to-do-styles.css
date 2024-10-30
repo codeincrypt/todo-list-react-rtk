@@ -181,10 +181,9 @@ h1 {
   border-radius: 50%;
   display: grid;
   place-content: center;
-
+  color: var(--delete-color);
   transition: all 0.2s;
-  color: transparent;
-  border: 2px solid transparent;
+  border: 2px solid var(--delete-color);
 }
 
 .task:hover .delete,

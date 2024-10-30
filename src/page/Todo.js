@@ -18,8 +18,10 @@ const Todo = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const todos = todo.trim();
+    if(todos === "" || todos.length === 0) return
     const id = Date.now();
-    const dataList = { id: id, name: todo, status: 0 };
+    const dataList = { id: id, name: todos, status: 0 };
     dispatch(addTodo(dataList));
     setTodo("");
   };
@@ -41,7 +43,8 @@ const Todo = () => {
         <div className="new-task-form">
           <input
             id="new-task"
-            placeholder="enter your task"
+            value={todo}
+            placeholder="Add your task"
             onChange={(e) => setTodo(e.target.value)}
           />
           <input type="submit" value="➡️" onClick={handleSubmit} />
